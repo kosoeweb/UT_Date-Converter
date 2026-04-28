@@ -164,7 +164,22 @@
     }
 
     window.onload = () => {
+      // မူလ Date ကို ယနေ့ရက်စွဲ ထည့်ပေးထားခြင်း
       document.getElementById('dateInput').value = new Date().toISOString().split('T')[0];
+
+      // Date Input Box ကို ဖျက်လိုက်လျှင် Result Box ပျောက်သွားစေရန်
+      document.getElementById('dateInput').addEventListener('input', function() {
+        if (!this.value) {
+          document.getElementById('resDateToSerial').style.display = 'none';
+        }
+      });
+
+      // Serial Input Box ကို ဖျက်လိုက်လျှင် Result Box ပျောက်သွားစေရန်
+      document.getElementById('serialInput').addEventListener('input', function() {
+        if (!this.value) {
+          document.getElementById('resSerialToDate').style.display = 'none';
+        }
+      });
     }
   </script>
 </body>
