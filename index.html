@@ -27,9 +27,29 @@
       max-width: 480px; margin: 25px auto; 
     }
 
-    /* Tab Styling */
-    .nav-pills .nav-link { color: #555; font-weight: bold; border: 1px solid #eee; margin: 0 5px; }
-    .nav-pills .nav-link.active { background-color: white !important; color: var(--primary-orange) !important; border-color: white; }
+    /* Tab Styling - ပြင်ဆင်ထားသော ပုံစံသစ် */
+    .nav-pills .nav-link { 
+      color: #666; 
+      font-weight: bold; 
+      background-color: #eee; /* မရွေးထားချိန်တွင် မီးခိုးရောင်ဖျော့ */
+      border: 1px solid #ddd; 
+      margin: 0 5px; 
+      transition: 0.3s ease;
+    }
+
+    /* Tab ကို ရွေးလိုက်တဲ့အခါ (Active ဖြစ်တဲ့အခါ) */
+    .nav-pills .nav-link.active { 
+      background-color: var(--primary-orange) !important; /* လိမ္မော်ရောင်ပြောင်းရန် */
+      color: white !important; /* စာသားအဖြူရောင်ပြောင်းရန် */
+      border-color: var(--primary-orange);
+      box-shadow: 0 4px 10px rgba(255, 102, 0, 0.2); /* အောက်က အရိပ်လေးထည့်ပေးထားပါတယ် */
+    }
+
+    /* Mouse တင်လိုက်တဲ့အခါ (Hover) */
+    .nav-pills .nav-link:hover:not(.active) {
+      background-color: #e2e2e2;
+      color: var(--primary-orange);
+    }
 
     .form-control-lg { border: 2px solid #eee; border-radius: 8px; font-weight: bold; }
     .form-control-lg:focus { border-color: var(--primary-orange); box-shadow: none; }
@@ -39,7 +59,8 @@
       padding: 12px; border: none; width: 100%; border-radius: 8px; margin-top: 10px;
       transition: 0.2s;
     }
-    .btn-convert:hover { background-color: var(--dark-orange); transform: scale(1.02); }
+
+    .btn-convert:hover { background-color: var(--dark-orange); transform: scale(1.01); }
 
     .result-box {
       background-color: #fff9f5; border: 1px solid #ffd8bf; 
@@ -107,7 +128,7 @@
       </div>
     </div>
     
-    <p class="text-center text-muted mt-4" style="font-size: 0.75rem;">Developed for Universal Tractor Co., Ltd.</p>
+    <p class="text-center text-muted mt-4" style="font-size: 0.75rem;">Developed by Universal Tractor Co., Ltd.</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
